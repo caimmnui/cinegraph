@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CineGraph - Discover</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="film-grain"></div>
+
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal-content">
+            <div class="modal-backdrop" id="modalBackdrop"></div>
+            <div class="modal-gradient-overlay"></div>
+
+            <button class="modal-close" id="closeModal" aria-label="Close">
+                <i class="fas fa-xmark"></i>
+            </button>
+
+            <div class="modal-body-content">
+                <div class="modal-poster-wrapper">
+                    <img id="modalPosterImg" src="" alt="Poster" class="modal-poster-img">
+                </div>
+
+                <div class="modal-info">
+                    <h1 id="modalTitle"></h1>
+
+                    <div class="modal-meta-row">
+                        <span id="modalYear"></span>
+                        <span class="divider">•</span>
+                        <span id="modalType"></span>
+                        <span class="divider">•</span>
+                        <span class="modal-rating" id="modalRating"></span>
+                    </div>
+
+                    <div class="modal-genres" id="modalGenres"></div>
+
+                    <div class="synopsis-box">
+                        <h3 data-i18n="synopsis">Sinopse</h3>
+                        <p class="modal-description" id="modalDescription"></p>
+                    </div>
+
+                    <div class="modal-data-grid" id="modalDetails"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="interface-wrapper">
+        <aside>
+            <div class="header-group">
+                <div class="brand">
+                    <h1>Cine<br>Graph</h1>
+                    <span data-i18n="O cinema não tem fronteiras nem limites."></span><br>
+                </div>
+
+                <div class="sidebar-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Alternar tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <select class="lang-select" id="langSelect" aria-label="Select Language">
+                        <option value="pt">🇧🇷 PT</option>
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <label id="searchLabel" for="movie-search"><i class="fas fa-search"></i> <span
+                        data-i18n="searchLabel">Buscar</span></label>
+                <div class="input-wrapper">
+                    <input type="text" id="movie-search" placeholder="Procure um filme ou série..." autocomplete="off">
+                    <div class="loader-mini" id="searchLoader"></div>
+                </div>
+            </div>
+
+            <div class="footer-signature">
+                <a href="https://github.com/caimmnui" target="_blank" class="github-icon-link"
+                    aria-label="GitHub Profile">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.477 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.29 9.5 21.04C9.5 20.82 9.5 20.24 9.5 19.46C6.73 20.06 6.14 18.12 6.14 18.12C5.69 16.96 5.03 16.64 5.03 16.64C4.13 16.02 5.1 16.04 5.1 16.04C6.1 16.11 6.63 17.07 6.63 17.07C7.52 18.6 8.96 18.16 9.53 17.9C9.62 17.25 9.88 16.81 10.17 16.56C7.94 16.31 5.6 15.44 5.6 11.56C5.6 10.45 6 9.54 6.65 8.82C6.55 8.57 6.2 7.51 6.75 6.12C6.75 6.12 7.61 5.84 9.56 7.17C10.38 6.94 11.26 6.83 12.13 6.83C13 6.83 13.88 6.94 14.7 7.17C16.65 5.84 17.51 6.12 17.51 6.12C18.06 7.51 17.71 8.57 17.61 8.82C18.26 9.54 18.65 10.45 18.65 11.56C18.65 15.45 16.3 16.3 14.07 16.55C14.43 16.86 14.76 17.48 14.76 18.43C14.76 19.79 14.75 20.88 14.75 21.04C14.75 21.3 14.91 21.59 15.42 21.5C19.38 20.16 22.25 16.42 22.25 12C22.25 6.477 17.77 2 12 2Z" />
+                    </svg>
+                </a>
+
+                <a href="https://github.com/caimmnui" target="_blank" class="footer-text">
+                    MADE BY <span class="caim-link">CAIM</span>
+                </a>
+            </div>
+
+        </aside>
+
+        <main id="movie-grid">
+            <div class="empty-state">
+                <i class="fas fa-film"></i>
+                <p data-i18n="emptyState">Digite para começar a busca</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
